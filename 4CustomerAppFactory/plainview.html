@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PLain View</title>
+</head>
+<body>
+    <div ng-controller="plainController">
+
+        <div>
+            <ul>
+                <li ng-repeat="name in names">{{name | uppercase}}</li>
+            </ul>
+        </div>
+        <a href="#!customview">Custom View</a>
+    </div>
+</body>
+</html>

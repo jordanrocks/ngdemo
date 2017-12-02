@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View 2</title>
+</head>
+<body>
+<div ng-controller="controllerTwo">
+    Name
+    <input type="text" ng-model="filter.name"/><br>
+    {{filter.name}}
+    <br/>
+    <div>
+        <ul>
+            <li ng-repeat="student in students | filter:filter.name| orderBy:'city' ">
+                Name : {{student.name | uppercase}} - City {{student.city | lowercase}}
+            </li>
+        </ul>
+    </div>
+
+    New Student
+    <input type="text" ng-model="newStudent.name"/>
+    {{newStudent.name}}
+    <br>
+    New Student City
+    <input type="text" ng-model="newStudent.city"/>
+    {{newStudent.city}}
+    <br>
+    <button ng-click="addStudent()"> Add Student</button>
+    <a href="#!view1">View 1</a>
+</div>
+</body>
+</html>

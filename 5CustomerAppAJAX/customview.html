@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom View</title>
+</head>
+<body>
+<div ng-controller="customController">
+       Name
+    <input type="text" ng-model="filter.name"/><br>
+    {{filter.name}}
+    <br/>
+    <div>
+        <ul>
+            <li ng-repeat="student in students | filter:filter.name| orderBy:'id' ">
+                Id: {{student.id}}- Name : {{student.name | uppercase}} - City {{student.city | lowercase}}
+            </li>
+        </ul>
+    </div>
+
+
+    New Student Id:
+    <input type="number" ng-model="newStudent.id"/>
+    {{newStudent.id}}
+    <br>
+    New Student Name:
+    <input type="text" ng-model="newStudent.name"/>
+    {{newStudent.name}}
+    <br>
+    New Student City
+    <input type="text" ng-model="newStudent.city"/>
+    {{newStudent.city}}
+    <br>
+    <button ng-click="addStudent()"> Add Student</button>
+    <a href="#!">View 1</a>
+</div>
+</body>
+</html>

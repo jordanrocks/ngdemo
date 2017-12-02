@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Using ng-init and ng-repeat</title>
+</head>
+<body>
+<div ng-app class="container" ng-init="names=['Adam', 'Jordy', 'Vidyalankar']">
+    <h3>Looping using ng-repeat Directive</h3>
+
+    <div>
+        <ul>
+            <li ng-repeat="name in names">{{name}}</li>
+        </ul>
+    </div>
+</div>
+<link href="https://docs.angularjs.org/api/ng/directive/ngRepeat">https://docs.angularjs.org/api/ng/directive/ngRepeat</link>
+<script src="../angular.min.js"></script>
+</body>
+</html>

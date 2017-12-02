@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using Controller </title>
+</head>
+<body>
+<div ng-app="app" class="container" ng-init="names=['Adam', 'Jordy', 'Vidyalankar']">
+    <h3>Looping using ng-repeat Directive</h3>
+
+    <div>
+        <ul>
+            <li ng-repeat="name in names">{{name | uppercase}}</li>
+        </ul>
+    </div>
+    <div ng-controller="firstCntrl">
+        Name
+        <input type="text" ng-model="name"/><br>
+        {{name}}
+        <br/>
+        <div>
+            <ul>
+                <li ng-repeat="student in students | filter:name| orderBy:'city' ">
+                    Name : {{student.name | uppercase}} - City {{student.city | lowercase}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<link href="https://docs.angularjs.org/api/ng/filter">
+https://docs.angularjs.org/api/ng/filter</link>
+<script src="../angular.min.js"></script>
+<script>
+	angular.module('app', ['helper']);
+	angular.module('app').controller('firstCntrl', firstCntrl);
+
+	function firstCntrl($scope) {
+		$scope.students = [{name: 'Pete', city: 'NY'}, {name: 'Jasmine', city: 'Rome'}, {name: 'Joe', city: 'Dublin'}];
+		$scope.name = "Varun";
+	}
+</script>
+</body>
+</html>

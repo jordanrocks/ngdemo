@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View 1</title>
+</head>
+<body>
+    <div ng-controller="controllerOne">
+        <div>
+            <ul>
+                <li ng-repeat="name in names">{{name | uppercase}}</li>
+            </ul>
+        </div>
+        <a href="#!view2">View 2</a>
+    </div>
+</body>
+</html>
